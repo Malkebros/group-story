@@ -1,0 +1,47 @@
+# Lab 3
+
+# Question 1 Answers
+
+a. Why did you branch prior to making changes?**
+Branching allows me to isolate my changes from the `main` branch, so I can develop without affecting the main project. It also enables safer collaboration through pull requests and easier conflict resolution.
+
+b. What is `git status`? What's the difference before and after commit?**
+`git status` shows the current state of the working directory and staging area.
+- Before commit: it shows modified and staged files.
+- After commit: it says "nothing to commit, working tree clean" if everything is committed.
+
+c. How did you resolve the merge conflict?**
+I opened the conflicting file (`story.md`), saw Git's conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`), and manually edited the file to merge the changes. Then I staged and committed the resolved file.
+
+# Question 2 Answers
+
+1. Explain what this command does:
+`git log --oneline --decorate --graph --parents` displays a visual representation of the commit history. It includes:
+- `--oneline`: Short, single-line format for each commit
+- `--decorate`: Shows branch names and tags
+- `--graph`: ASCII graph showing branches and merges
+- `--parents`: Displays parent commits (useful for merges)
+
+This is useful for understanding how branches diverged and merged over time.
+
+2. Copy and paste the generated graph. Then, explain the graph that is generated from the 
+graph. Use what is committed, what is branched and what is merged in your explanation. 
+*   1ab8966 7413557 469e73c (HEAD -> add-SamuelMalke-part) Resolved merge conflict in story.md
+   |\
+   | * 469e73c 16ede48 (origin/main, origin/HEAD, main) Update story.md
+   | * 16ede48 ad1800c Update story.md
+   | * ad1800c 1e7b440 Update story.md
+   | * 1e7b440 31b5f79 Update story.md
+* | 7413557 31b5f79 Changed location to donut shop
+  |/
+* 31b5f79 c64687c Update README.md
+* c64687c 63522f0 (origin/add-SamuelMalke-part, add-yourname-part) Create story:
+
+
+Explanation:
+- The first commit created the repository and added `story.md`.
+- The main branch received several updates to `story.md`.
+- I created a new branch and made changes to the same file.
+- A conflict occurred when I merged the `main` branch into my branch.
+- I resolved the conflict manually and committed the result.
+
